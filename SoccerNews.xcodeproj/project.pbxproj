@@ -9,35 +9,33 @@
 /* Begin PBXBuildFile section */
 		2CFA2034221A4AAB00C50A2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA2033221A4AAB00C50A2E /* AppDelegate.swift */; };
 		2CFA2039221A4AAB00C50A2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFA2037221A4AAB00C50A2E /* Main.storyboard */; };
-		2CFA203C221A4AAB00C50A2E /* SoccerNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA203A221A4AAB00C50A2E /* SoccerNews.xcdatamodeld */; };
 		2CFA203E221A4AAB00C50A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CFA203D221A4AAB00C50A2E /* Assets.xcassets */; };
 		2CFA2041221A4AAB00C50A2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CFA203F221A4AAB00C50A2E /* LaunchScreen.storyboard */; };
-		2CFA2050221A8B6B00C50A2E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA204F221A8B6B00C50A2E /* DetailViewController.swift */; };
+		2CFA2050221A8B6B00C50A2E /* RSSFeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA204F221A8B6B00C50A2E /* RSSFeedDetailViewController.swift */; };
 		EDEA2369221B050A00A6B4E4 /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA2368221B050A00A6B4E4 /* FeedParser.swift */; };
 		EDEA236B221B08DC00A6B4E4 /* RSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA236A221B08DC00A6B4E4 /* RSSFeed.swift */; };
 		EDEA236D221B098700A6B4E4 /* RSSFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA236C221B098700A6B4E4 /* RSSFeedItem.swift */; };
 		EDEA236F221B0A2000A6B4E4 /* RSSFeedItemEnclosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA236E221B0A2000A6B4E4 /* RSSFeedItemEnclosure.swift */; };
 		EDEA2371221B10F900A6B4E4 /* XmlFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA2370221B10F900A6B4E4 /* XmlFeedParser.swift */; };
 		EDEA2373221B140E00A6B4E4 /* RSSPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA2372221B140E00A6B4E4 /* RSSPath.swift */; };
-		EDEA2377221B26FC00A6B4E4 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA2376221B26FC00A6B4E4 /* NewsTableViewController.swift */; };
+		EDEA2377221B26FC00A6B4E4 /* RSSFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEA2376221B26FC00A6B4E4 /* RSSFeedTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2CFA2030221A4AAB00C50A2E /* SoccerNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoccerNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CFA2033221A4AAB00C50A2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CFA2038221A4AAB00C50A2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2CFA203B221A4AAB00C50A2E /* SoccerNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoccerNews.xcdatamodel; sourceTree = "<group>"; };
 		2CFA203D221A4AAB00C50A2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CFA2040221A4AAB00C50A2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CFA2042221A4AAB00C50A2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CFA204F221A8B6B00C50A2E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2CFA204F221A8B6B00C50A2E /* RSSFeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedDetailViewController.swift; sourceTree = "<group>"; };
 		EDEA2368221B050A00A6B4E4 /* FeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
 		EDEA236A221B08DC00A6B4E4 /* RSSFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeed.swift; sourceTree = "<group>"; };
 		EDEA236C221B098700A6B4E4 /* RSSFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedItem.swift; sourceTree = "<group>"; };
 		EDEA236E221B0A2000A6B4E4 /* RSSFeedItemEnclosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSFeedItemEnclosure.swift; sourceTree = "<group>"; };
 		EDEA2370221B10F900A6B4E4 /* XmlFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlFeedParser.swift; sourceTree = "<group>"; };
 		EDEA2372221B140E00A6B4E4 /* RSSPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSPath.swift; sourceTree = "<group>"; };
-		EDEA2376221B26FC00A6B4E4 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
+		EDEA2376221B26FC00A6B4E4 /* RSSFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSFeedTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,16 +68,13 @@
 		2CFA2032221A4AAB00C50A2E /* SoccerNews */ = {
 			isa = PBXGroup;
 			children = (
+				2CFA2033221A4AAB00C50A2E /* AppDelegate.swift */,
 				EDEA2367221B04D600A6B4E4 /* Source */,
 				2CFA204A221A53F300C50A2E /* Model */,
-				2CFA2033221A4AAB00C50A2E /* AppDelegate.swift */,
-				EDEA2376221B26FC00A6B4E4 /* NewsTableViewController.swift */,
-				2CFA204F221A8B6B00C50A2E /* DetailViewController.swift */,
-				2CFA2037221A4AAB00C50A2E /* Main.storyboard */,
+				2CFE7FD4221BA43D0029BBCD /* ViewModel */,
+				2CFE7FD3221BA2430029BBCD /* View */,
 				2CFA203D221A4AAB00C50A2E /* Assets.xcassets */,
-				2CFA203F221A4AAB00C50A2E /* LaunchScreen.storyboard */,
 				2CFA2042221A4AAB00C50A2E /* Info.plist */,
-				2CFA203A221A4AAB00C50A2E /* SoccerNews.xcdatamodeld */,
 			);
 			path = SoccerNews;
 			sourceTree = "<group>";
@@ -87,12 +82,30 @@
 		2CFA204A221A53F300C50A2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EDEA236A221B08DC00A6B4E4 /* RSSFeed.swift */,
 				EDEA236C221B098700A6B4E4 /* RSSFeedItem.swift */,
 				EDEA236E221B0A2000A6B4E4 /* RSSFeedItemEnclosure.swift */,
 				EDEA2372221B140E00A6B4E4 /* RSSPath.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2CFE7FD3221BA2430029BBCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDEA2376221B26FC00A6B4E4 /* RSSFeedTableViewController.swift */,
+				2CFA204F221A8B6B00C50A2E /* RSSFeedDetailViewController.swift */,
+				2CFA2037221A4AAB00C50A2E /* Main.storyboard */,
+				2CFA203F221A4AAB00C50A2E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2CFE7FD4221BA43D0029BBCD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EDEA236A221B08DC00A6B4E4 /* RSSFeed.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		EDEA2367221B04D600A6B4E4 /* Source */ = {
@@ -177,11 +190,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CFA203C221A4AAB00C50A2E /* SoccerNews.xcdatamodeld in Sources */,
 				EDEA2369221B050A00A6B4E4 /* FeedParser.swift in Sources */,
 				EDEA236B221B08DC00A6B4E4 /* RSSFeed.swift in Sources */,
-				EDEA2377221B26FC00A6B4E4 /* NewsTableViewController.swift in Sources */,
-				2CFA2050221A8B6B00C50A2E /* DetailViewController.swift in Sources */,
+				EDEA2377221B26FC00A6B4E4 /* RSSFeedTableViewController.swift in Sources */,
+				2CFA2050221A8B6B00C50A2E /* RSSFeedDetailViewController.swift in Sources */,
 				EDEA2371221B10F900A6B4E4 /* XmlFeedParser.swift in Sources */,
 				EDEA236D221B098700A6B4E4 /* RSSFeedItem.swift in Sources */,
 				EDEA236F221B0A2000A6B4E4 /* RSSFeedItemEnclosure.swift in Sources */,
@@ -375,19 +387,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2CFA203A221A4AAB00C50A2E /* SoccerNews.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2CFA203B221A4AAB00C50A2E /* SoccerNews.xcdatamodel */,
-			);
-			currentVersion = 2CFA203B221A4AAB00C50A2E /* SoccerNews.xcdatamodel */;
-			path = SoccerNews.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2CFA2028221A4AAB00C50A2E /* Project object */;
 }

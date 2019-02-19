@@ -13,7 +13,7 @@ public class XmlFeedParser: NSObject, XMLParserDelegate {
     var rssFeed: RSSFeed?
     fileprivate var currentXMLDOMPath: URL = URL(string: "/")!
     var parseComplete = false
-    required init(data: Data) {
+    public required init(data: Data) {
         self.xmlParser = XMLParser(data: data)
         super.init()
         self.xmlParser.delegate = self
@@ -42,7 +42,7 @@ extension XmlFeedParser {
         self.currentXMLDOMPath = self.currentXMLDOMPath.deletingLastPathComponent()
         if currentXMLDOMPath.absoluteString == "/" {
             parseComplete = true
-            xmlParser.abortParsing()
+            //xmlParser.abortParsing()
         }
     }
     public func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {
@@ -50,6 +50,9 @@ extension XmlFeedParser {
             return
         }
         self.map(string)
+    }
+    public func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
+        print(parseError)
     }
     public func parser(_ parser: XMLParser, foundCharacters string: String) {
         self.map(string)

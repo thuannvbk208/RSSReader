@@ -8,26 +8,23 @@
 
 import UIKit
 
-class NewsTableViewController: UITableViewController {
+class RSSFeedTableViewController: UITableViewController {
     private let url = URL(string: "http://soha.vn/the-thao.rss")!
     lazy var parser = FeedParser(url)
     var feed: RSSFeed?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 140
         tableView.dataSource = self
-        parser.parseAsync { (feed) in
+        parser.parseAsync { [weak self] (feed) in
             if let f = feed {
-                self.feed = f
+                self?.feed = f
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self?.tableView.reloadData()
                 }
             }
         }
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,16 +42,16 @@ class NewsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let name = segue.identifier, name == "DetailItem" {
-            if let vc = segue.destination as? DetailViewController {
+            if let vc = segue.destination as? RSSFeedDetailViewController {
                 let indexPath = self.tableView.indexPathForSelectedRow!
-                vc.selectedUrl = self.feed?.items?[indexPath.row].link ?? "No link"
+                vc.selectedUrl = self.feed?.getLinkItem(indexPath.row) ?? "No link"
             }
         }
     }
 }
-extension NewsTableViewController {
+extension RSSFeedTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.feed?.items?.count ?? 0
+        return self.feed?.getItemCount() ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -72,11 +69,11 @@ extension NewsTableViewController {
         layer?.masksToBounds = true
         cell.imageView?.image = img
         
-        cell.textLabel?.text = self.feed?.items?[indexPath.row].title ?? "No title"
+        cell.textLabel?.text = self.feed?.getTitleItem(indexPath.row) ?? "No title"
         cell.textLabel?.textColor = UIColor.black
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = .byWordWrapping
-        cell.detailTextLabel?.text = self.feed?.items?[indexPath.row].description ?? "No description"
+        cell.detailTextLabel?.text = self.feed?.getDescriptionItem(indexPath.row) ?? "No description"
         cell.detailTextLabel?.textColor = UIColor.black
         return cell
     }

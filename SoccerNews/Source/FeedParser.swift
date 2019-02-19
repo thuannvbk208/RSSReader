@@ -26,10 +26,11 @@ class FeedParser {
         }
     }
     
-    public func parseAsync(queue: DispatchQueue = DispatchQueue.global(), completion: @escaping (RSSFeed?)->Void) {
+    public func parseAsync(result: @escaping (RSSFeed?)->Void) {
+        let queue: DispatchQueue = DispatchQueue.global()
         queue.async {
             self.parse()
-            completion(self.parser?.rssFeed ?? nil)
+            result(self.parser?.rssFeed ?? nil)
         }
     }
 }

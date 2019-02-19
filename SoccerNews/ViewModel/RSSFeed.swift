@@ -9,24 +9,52 @@
 import Foundation
 
 public class RSSFeed {
-    public var title: String?
-    public var link: String?
-    public var description: String?
-    public var pubDate: String?
-    public var generator: String?
-    public var ttl: Int?
-    public var items: [RSSFeedItem]?
+    private var title: String?
+    private var link: String?
+    private var description: String?
+    private var pubDate: String?
+    private var generator: String?
+    private var ttl: Int?
+    private var items: [RSSFeedItem]?
+    
+    public func getTitleItem(_ index: Int) -> String? {
+        return items?[index].title ?? nil
+    }
+    
+    public func getLinkItem(_ index: Int) -> String? {
+        return items?[index].link ?? nil
+    }
+    
+    public func getDescriptionItem(_ index: Int) -> String? {
+        return items?[index].description ?? nil
+    }
+    
+    public func getPubDateItem(_ index: Int) -> String? {
+        return items?[index].pubDate ?? nil
+    }
+    
+    public func getAuthorItem(_ index: Int) -> String? {
+        return items?[index].author ?? nil
+    }
+    
+    public func getEnclosureItem(_ index: Int) -> String? {
+        return items?[index].enclosure?.attributes?.url ?? nil
+    }
+    
+    public func getItemCount() -> Int? {
+        return items?.count ?? nil
+    }
 }
 
 extension RSSFeed: Equatable {
     public static func == (lhs: RSSFeed, rhs: RSSFeed) -> Bool {
-        return lhs.title == rhs.title &&
-               lhs.link == rhs.link &&
-               lhs.description == rhs.description &&
-               lhs.pubDate == rhs.pubDate &&
-               lhs.generator == rhs.generator &&
-               lhs.ttl == rhs.ttl &&
-               lhs.items == rhs.items
+        return lhs.title! == rhs.title! &&
+               lhs.link! == rhs.link! &&
+               lhs.description! == rhs.description! &&
+               lhs.pubDate! == rhs.pubDate! &&
+               lhs.generator! == rhs.generator! &&
+               lhs.ttl! == rhs.ttl! &&
+               lhs.items! == rhs.items!
     }
 }
 
