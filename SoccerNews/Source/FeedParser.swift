@@ -14,7 +14,7 @@ class FeedParser {
     public init(_ url: URL) {
         self.url = url
     }
-    public func parse() {
+    private func parse() {
         if let url = url {
             do {
                 let data = try Data(contentsOf: url)

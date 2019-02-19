@@ -38,11 +38,9 @@ extension XmlFeedParser {
         }
     }
     public func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        // Update the current path along the XML's DOM elements by deleting last component.
         self.currentXMLDOMPath = self.currentXMLDOMPath.deletingLastPathComponent()
         if currentXMLDOMPath.absoluteString == "/" {
             parseComplete = true
-            //xmlParser.abortParsing()
         }
     }
     public func parser(_ parser: XMLParser, foundCDATA CDATABlock: Data) {

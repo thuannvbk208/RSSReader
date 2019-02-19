@@ -16,6 +16,7 @@ class RSSFeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 140
+        tableView.allowsMultipleSelection = false
         tableView.dataSource = self
         parser.parseAsync { [weak self] (feed) in
             if let f = feed {
@@ -43,8 +44,9 @@ class RSSFeedTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let name = segue.identifier, name == "DetailItem" {
             if let vc = segue.destination as? RSSFeedDetailViewController {
-                let indexPath = self.tableView.indexPathForSelectedRow!
-                vc.selectedUrl = self.feed?.getLinkItem(indexPath.row) ?? "No link"
+                if let cell = sender as? UITableViewCell {
+                    vc.selectedUrl = self.feed?.getLinkItem(self.tableView.indexPath(for: cell)?.row ?? 0) ?? "No link"
+                }
             }
         }
     }
@@ -78,21 +80,16 @@ extension RSSFeedTableViewController {
         return cell
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "DetailItem", sender: nil)
+        self.performSegue(withIdentifier: "DetailItem", sender: tableView.cellForRow(at: indexPath))
     }
     
-    
     func resizeImage(image:UIImage, toTheSize size:CGSize)->UIImage? {
-        
         let scale = CGFloat(max(size.width/image.size.width,
                                 size.height/image.size.height))
         let width:CGFloat  = image.size.width * scale
         let height:CGFloat = image.size.height * scale;
-        
         let rr:CGRect = CGRect(x: 0, y: 0, width: width, height: height)
-        
         UIGraphicsBeginImageContextWithOptions(size, false, 0);
         image.draw(in: rr)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
